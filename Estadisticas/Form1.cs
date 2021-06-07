@@ -73,70 +73,7 @@ namespace Estadisticas
                 }
                 path = saveFileDialog1.FileName;
                 sl.SaveAs(path);
-            }
-           
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            SLDocument sl = new SLDocument(@"C:\Users\carlo\source\repos\Archivos.xlsx");
-            int row = 2;
-            List<Producto> listProducto = new List<Producto>();
-            while (!string.IsNullOrEmpty(sl.GetCellValueAsString(row, 1)))
-            {
-                Producto producto = new Producto();
-                producto.Codigo = sl.GetCellValueAsString(row, 1);
-                producto.Nombre = sl.GetCellValueAsString(row, 2);
-                producto.Precio = sl.GetCellValueAsInt32(row, 3);
-                producto.Cantidad = sl.GetCellValueAsInt32(row, 4);
-
-                listProducto.Add(producto);
-
-                row += 1;
-            }
-            int rows;
-            int iR = 1;
-            rows = dgvDatos.CurrentRow.Index;
-            listProducto.Clear();
-            while (!string.IsNullOrEmpty(sl.GetCellValueAsString(iR, 1)))
-            {
-                Producto producto = new Producto();
-                if (rows == iR)
-                {
-                    iR += 1;
-                }else
-                {
-                    producto.Codigo = sl.GetCellValueAsString(iR, 1);
-                    producto.Nombre = sl.GetCellValueAsString(iR, 2);
-                    producto.Precio = sl.GetCellValueAsInt32(iR, 3);
-                    producto.Cantidad = sl.GetCellValueAsInt32(iR, 4);
-
-                    listProducto.Add(producto);
-
-                    iR += 1;
-                }
-            }
-            dgvDatos.DataSource = listProducto;
-        }
-        private void frmEstadisticas_Load(object sender, EventArgs e)
-        {
-            SLDocument sl = new SLDocument(@"C:\Users\carlo\source\repos\Archivos.xlsx");
-            int row = 2;
-            List<Producto> listProducto = new List<Producto>();
-            while (!string.IsNullOrEmpty(sl.GetCellValueAsString(row, 1)))
-            {
-                Producto producto = new Producto();
-                producto.Codigo = sl.GetCellValueAsString(row, 1);
-                producto.Nombre = sl.GetCellValueAsString(row, 2);
-                producto.Precio = sl.GetCellValueAsInt32(row, 3);
-                producto.Cantidad = sl.GetCellValueAsInt32(row, 4);
-
-                listProducto.Add(producto);
-
-                row += 1;
-            }
-
-            dgvDatos.DataSource = listProducto;
+            }           
         }
     }
 }

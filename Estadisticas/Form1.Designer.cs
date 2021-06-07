@@ -39,7 +39,6 @@ namespace Estadisticas
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,7 +124,6 @@ namespace Estadisticas
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label1
             // 
@@ -151,7 +149,6 @@ namespace Estadisticas
             this.Controls.Add(this.cbxMes);
             this.Name = "frmEstadisticas";
             this.Text = "Estadisticas";
-            this.Load += new System.EventHandler(this.frmEstadisticas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,7 +167,6 @@ namespace Estadisticas
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog2;
     }
 }
 
